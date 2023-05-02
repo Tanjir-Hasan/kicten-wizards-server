@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Form, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Lottie from "lottie-react";
 import login from "../../../../../public/animation/122987-admin-page-koperasi.json";
 import { AuthContext } from '../../../providers/AuthProvider';
@@ -54,16 +54,16 @@ const Login = () => {
             <div>
                 <div className='w-full mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
                     <h3 className='text-2xl font-medium mb-6'>Login</h3>
-                    <Form onSubmit={handleLogin} className='flex flex-col'>
-                        <input type="email" name="email" id="" placeholder='User name or email' className='placeholder-gray-800 border-b border-gray-300 outline-none mb-4 pb-2' />
-                        <input type="password" name="password" id="" placeholder='Password' className='placeholder-gray-800 border-b border-gray-300 outline-none mb-4 pb-2' />
+                    <form onSubmit={handleLogin} className='flex flex-col'>
+                        <input type="email" name="email" id="" placeholder='User name or email' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none mb-4 pb-2' required />
+                        <input type="password" name="password" id="" placeholder='Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none mb-4 pb-2' required />
                         <div className='inline-flex gap-2'>
                             <input type="checkbox" name="" id="" />
                             <p>Remember Me</p>
                         </div>
                         <button className='text-slate-950 bg-[#eebe7a] hover:bg-[#f2d3a8] my-6 py-3'>Login</button>
                         <p className='text-center'>Don't have an account? <Link to="/register" className='text-[#eebe7a] hover:text-[#f2d3a8] underline underline-offset-2'>Create an account</Link></p>
-                    </Form>
+                    </form>
                 </div>
                 <div className="flex items-center w-full mx-auto py-4">
                     <div className="flex-grow h-px bg-[#0F1D22]"></div>

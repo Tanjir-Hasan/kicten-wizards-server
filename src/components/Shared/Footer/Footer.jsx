@@ -3,36 +3,40 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <>
-            <div className='bg-[#0F1D22] p-16 text-white mt-8'>
+        <div className='bg-[#0F1D22] p-16 text-white mt-8'>
+            <div className='flex justify-between'>
+                <div className=''>
+                    <h3 className='text-xl font-medium text-[#f2d3a8] mb-3'>Kitchen Wizards</h3>
+                    <p>We provide new recipes with a twist on daily basis.
+                        <br />
+                        I also post blog posts about fun ideas to do in the kitchen</p>
+                </div>
                 <div>
-                    <div>
-                        <h3>Kitchen Wizards</h3>
-                        <p>We provide new recipes with a twist on daily basis. I also post blog posts about fun ideas to do in the kitchen</p>
-                    </div>
-                    <div>
-                        <h3>Need help?</h3>
-                        <p>Contact us via phone or email</p>
+                    <h3 className='text-xl font-medium text-[#f2d3a8] mb-3'>Need help?</h3>
+                    <p>Contact us via phone or email</p>
+                    <div className='flex flex-col'>
                         <Link>
                             T: 1-555-555-5555
                         </Link>
                         <Link>
-                            E: info@socialchef.com
+                            E: info@kitchenwizards.com
                         </Link>
                     </div>
-                    <div>
-                        <h3>Follow us</h3>
-                    </div>
                 </div>
-                <hr />
+                <div>
+                    <h3 className='text-xl font-medium text-[#f2d3a8] mb-3'>Follow us</h3>
+                </div>
             </div>
-            <div>
-                <p>© socialchef.com 2023. All rights reserved.</p>
-                <Link>Contact</Link>
-                <Link to="/login">Login</Link>
-                <Link to="/register">Register</Link>
+            <hr className='my-3' />
+            <div className='flex justify-between'>
+                <p>© kitchenwizards.com 2023. All rights reserved.</p>
+                <div className='flex gap-4'>
+                    <Link>Contact</Link>
+                    <Link to="/login">Login</Link>
+                    <Link to="/register">Register</Link>
+                </div>
             </div>
-        </>
+        </div>
     );
 };
 
