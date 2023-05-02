@@ -58,7 +58,7 @@ const Register = () => {
 
                         <input type="password" name="confirmPassword" id="" placeholder='Confirm Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none mb-4 pb-2' required />
 
-                        <button className='text-slate-950 bg-[#eebe7a] hover:bg-[#f2d3a8] my-6 py-3'>Register</button>
+                        <button className='text-slate-950 bg-[#e19a3c] hover:bg-[#f2bc71] my-6 py-3'>Register</button>
                         <p className='text-center'>Already have an account? <Link to="/login" className='text-[#eebe7a] hover:text-[#f2d3a8] underline underline-offset-2 '>Login</Link></p>
                     </form>
                 </div>

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import Lottie from "lottie-react";
 import login from "../../../../../public/animation/122987-admin-page-koperasi.json";
 import { AuthContext } from '../../../providers/AuthProvider';
@@ -7,7 +7,15 @@ import { signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
 
+    const {id} = useParams();
+
     const { signUser, googleAuthProvider, auth, gitHubAuthProvider } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || `/data/${id}`;
 
     const handleLogin = event => {
         event.preventDefault();
@@ -20,7 +28,8 @@ const Login = () => {
         signUser(email, password)
             .then(result => {   
                 const loggedUser = result.user;
-                console.log(loggedUser)
+                console.log(loggedUser);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
@@ -61,7 +70,7 @@ const Login = () => {
                             <input type="checkbox" name="" id="" />
                             <p>Remember Me</p>
                         </div>
-                        <button className='text-slate-950 bg-[#eebe7a] hover:bg-[#f2d3a8] my-6 py-3'>Login</button>
+                        <button className='text-slate-950 bg-[#e19a3c] hover:bg-[#f2bc71] my-6 py-3' >Login</button>
                         <p className='text-center'>Don't have an account? <Link to="/register" className='text-[#eebe7a] hover:text-[#f2d3a8] underline underline-offset-2'>Create an account</Link></p>
                     </form>
                 </div>
