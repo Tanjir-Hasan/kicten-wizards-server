@@ -12,7 +12,7 @@ const Chefs = () => {
 
     return (
         <div>
-            <h3 className='text-5xl font-semibold font-mono text-center my-10'>Top Chef's</h3>
+            <h3 className='text-5xl font-semibold font-mono text-white text-center bg-[#0F1D22] my-10 p-8'>Our Favourite Chef's</h3>
             {
                 chefs.map(chef => <DynamicChef
                     key={chef.chef_id}

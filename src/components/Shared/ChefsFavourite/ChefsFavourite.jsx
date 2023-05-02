@@ -3,7 +3,7 @@ import React from 'react';
 const ChefsFavourite = () => {
     return (
         <>
-            <h1 className='text-5xl font-semibold font-mono text-white text-center bg-[#0F1D22] my-10 p-8'>Chef's Favorite</h1>
+            <h1 className='text-5xl font-semibold font-mono text-white text-center bg-[#0F1D22] my-10 p-8'>Chef's Favourite</h1>
             <div className='px-8'>
                 <div className='lg:flex items-center gap-16 border-4 border-[#0F1D22] hover:bg-[#C9AB81] transition duration-300 ease-in-out rounded-lg mb-4 p-4'>
                     <img src="https://i.ibb.co/6n98zq5/f1.webp" alt="" className='h-72' />
