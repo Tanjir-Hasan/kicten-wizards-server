@@ -57,7 +57,7 @@ const ChefDetails = () => {
     };
 
     return (
-        <div>
+        <div className='w-11/12 mx-auto my-8'>
             <ToastContainer />
             <div className='flex items-center'>
                 <div>
@@ -65,62 +65,74 @@ const ChefDetails = () => {
                     <p className='text-xl font-thin mb-1'><span className='text-[#4b6e7d]'>Bio:</span> {short_bio}</p>
                     <p className='text-xl font-thin mb-1'><span className='text-[#4b6e7d]'>Years of Experience:</span> {years_of_experience}</p>
                     <p className='text-xl font-thin mb-1'><span className='text-[#4b6e7d]'>Number of Recipes:</span> {number_of_recipes}</p>
-                    <p className='text-xl font-thin mb-1'><span className='text-[#4b6e7d]'>Likes:</span> {likes}</p>
+                    <span className='inline-flex items-center gap-2 mt-3'>
+                        <img src="https://i.ibb.co/xqZM3Mm/like.png" alt="" className='h-8' />
+                        <p className='text-xl font-bold text-[#d90429]'>{likes}</p>
+                    </span>
                 </div>
                 <img src={chef_picture} alt="" className='h-72' />
             </div>
-            {/* recipe 1 */}
-            <div>
-                <div className='flex justify-between'>
-                    <h4>{recipes[0].recipe_name}</h4>
-                    <button disabled={disable1} onClick={handleFavorites}>
-                        {
-                            disable1 ? <BsFillHeartFill size={15} color="red" /> : <BsHeart size={15} />
-                        }
-                    </button>
+            <div className='flex gap-8 mt-8'>
+                {/* recipe 1 */}
+                <div className=''>
+                    <img src={recipes[0].img1} alt="" className='w-auto h-48 mb-3 mx-auto rounded-lg' />
+                    <div className='flex justify-between'>
+                        <h4 className='text-xl font-serif text-rose-700 mb-3'>{recipes[0].recipe_name}</h4>
+                        <button disabled={disable1} onClick={handleFavorites}>
+                            {
+                                disable1 ? <BsFillHeartFill size={15} color="red" /> : <BsHeart size={15} />
+                            }
+                        </button>
+                    </div>
+                    <div>
+                        <p>{recipes[0].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p>
+                    </div>
+                    <p className='font-semibold my-1'>Cooking process</p>
+                    {
+                        show1 === true ?
+                            <>
+                                <p className='text-slate-900'>{recipes[0].cooking_method}</p>
+                                <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow1(!show1)}>Read less</span>
+                            </>
+                            :
+                            <>
+                                <p className='text-slate-500'>{recipes[0].cooking_method.substring(0, 100)}.....</p>
+                                <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow1(!show1)}>Read more</span>
+                            </>
+                    }
                 </div>
-                <div><p>{recipes[0].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p></div>
-                {
-                    show1 === true ?
-                        <>
-                            <p className='text-slate-900'>{recipes[0].cooking_method}</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow1(!show1)}>Read less</span>
-                        </>
-                        :
-                        <>
-                            <p className='text-slate-500'>{recipes[0].cooking_method.substring(0, 100)}.....</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow1(!show1)}>Read more</span>
-                        </>
-                }
-            </div>
-            {/* recipe 2 */}
-            <div>
-                <div className='flex justify-between'>
-                    <h4>{recipes[1].recipe_name}</h4>
-                    <button disabled={disable2} onClick={handleFavorites1}>
-                        {
-                            disable2 ? <BsFillHeartFill size={15} color="red" /> : <BsHeart size={15} />
-                        }
-                    </button>
+                {/* recipe 2 */}
+                <div className=''>
+                    <img src={recipes[1].img2} alt="" className='w-auto h-48 mb-3 mx-auto rounded-lg' />
+                    <div className='flex justify-between'>
+                        <h4 className='text-xl font-serif text-rose-700 mb-3'>{recipes[1].recipe_name}</h4>
+                        <button disabled={disable2} onClick={handleFavorites1}>
+                            {
+                                disable2 ? <BsFillHeartFill size={15} color="red" /> : <BsHeart size={15} />
+                            }
+                        </button>
+                    </div>
+                    <div><p>{recipes[1].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p></div>
+                    <p className='font-semibold my-1'>Cooking process</p>
+                    {
+                        show2 === true ?
+                            <>
+                                <p className='text-slate-900'>{recipes[1].cooking_method}</p>
+                                <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow2(!show2)}>Read less</span>
+                            </>
+                            :
+                            <>
+                                <p className='text-slate-500'>{recipes[1].cooking_method.substring(0, 100)}.....</p>
+                                <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow2(!show2)}>Read more</span>
+                            </>
+                    }
                 </div>
-                <div><p>{recipes[1].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p></div>
-                {
-                    show2 === true ?
-                        <>
-                            <p className='text-slate-900'>{recipes[1].cooking_method}</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow2(!show2)}>Read less</span>
-                        </>
-                        :
-                        <>
-                            <p className='text-slate-500'>{recipes[1].cooking_method.substring(0, 100)}.....</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow2(!show2)}>Read more</span>
-                        </>
-                }
             </div>
             {/* recipe 3 */}
-            <div>
-                <div className='flex justify-between'>
-                    <h4>{recipes[2].recipe_name}</h4>
+            <div className='mx-auto mt-6'>
+                <img src={recipes[2].img3} alt="" className='w-auto h-48 mb-3 mx-auto rounded-lg' />
+                <div className='flex justify-evenly'>
+                    <h4 className='text-xl font-serif text-rose-700 mb-3'>{recipes[2].recipe_name}</h4>
                     <button disabled={disable3} onClick={handleFavorites2}>
                         {
                             disable3 ? <BsFillHeartFill size={15} color="red" /> : <BsHeart size={15} />
@@ -128,6 +140,7 @@ const ChefDetails = () => {
                     </button>
                 </div>
                 <div><p>{recipes[2].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p></div>
+                <p className='font-semibold my-1'>Cooking process</p>
                 {
                     show3 === true ?
                         <>

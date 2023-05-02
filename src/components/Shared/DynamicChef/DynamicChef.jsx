@@ -6,14 +6,21 @@ const DynamicChef = ({ chef }) => {
     console.log(chef_name)
     return (
         <>
-            <div className="card card-side bg-base-100 shadow-xl w-4/5 mx-auto">
-                <figure><img src={chef_picture} alt="Movie" className='w-2/5 h-96' /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">{chef_name}</h2>
-                    <p>Years of experience: {years_of_experience}</p>
-                    <p>Numbers of recipes: {number_of_recipes}</p>
-                    <p>Likes {likes}</p>
-                    <div className="card-actions justify-end">
+            <div className="lg:flex bg-base-100 shadow-xl rounded-lg w-2/3 mx-auto mb-6">
+                <img src={chef_picture} className='h-64 rounded-ss-2xl' />
+                <div className="card-body lg:flex lg:flex-row items-center justify-between">
+                    <div className='lg:flex gap-12'>
+                        <h2 className="card-title text-[#d90429]">{chef_name}</h2>
+                        <div>
+                            <p className='text-slate-800 font-sans'>Years of experience: {years_of_experience}</p>
+                            <p className='text-slate-800 font-sans'>Numbers of recipes: {number_of_recipes}</p>
+                            <span className='inline-flex items-center gap-2 mt-3'>
+                                <img src="https://i.ibb.co/xqZM3Mm/like.png" alt="" className='h-8' />
+                                <p className='font-bold text-[#d90429]'>{likes}</p>
+                            </span>
+                        </div>
+                    </div>
+                    <div>
                         <Link to={`/data/${chef_id}`}>
                             <button className="btn text-slate-950 bg-[#e19a3c] hover:bg-[#f2bc71] border-none">View Recipes</button>
                         </Link>
