@@ -5,17 +5,47 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ChefDetails = () => {
-    const [show, setShow] = useState(false);
+    const [show1, setShow1] = useState(false);
+    const [show2, setShow2] = useState(false);
+    const [show3, setShow3] = useState(false);
 
-    const [disable, setDisable] = useState(false);
+    const [disable1, setDisable1] = useState(false);
+    const [disable2, setDisable2] = useState(false);
+    const [disable3, setDisable3] = useState(false);
 
     const details = useLoaderData();
 
     const { recipes, chef_picture, chef_name, short_bio, years_of_experience, number_of_recipes, likes } = details;
 
     const handleFavorites = () => {
-        setDisable(true);
-        toast.success('The recipe is your favorite!', {
+        setDisable1(true);
+        toast.success(`${recipes[0].recipe_name} is your favorite!`, {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    };
+
+    const handleFavorites1 = () => {
+        setDisable2(true);
+        toast.success(`${recipes[1].recipe_name} is your favorite!`, {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
+    };
+
+    const handleFavorites2 = () => {
+        setDisable3(true);
+        toast.success(`${recipes[2].recipe_name} is your favorite!`, {
             position: 'top-right',
             autoClose: 3000,
             hideProgressBar: true,
@@ -39,58 +69,75 @@ const ChefDetails = () => {
                 </div>
                 <img src={chef_picture} alt="" className='h-72' />
             </div>
+            {/* recipe 1 */}
             <div>
                 <div className='flex justify-between'>
                     <h4>{recipes[0].recipe_name}</h4>
-                    <button disabled={disable} onClick={handleFavorites}>
+                    <button disabled={disable1} onClick={handleFavorites}>
                         {
-                            disable ? <BsFillHeartFill size={15} color="red" /> : <BsHeart size={15} />
+                            disable1 ? <BsFillHeartFill size={15} color="red" /> : <BsHeart size={15} />
                         }
                     </button>
                 </div>
                 <div><p>{recipes[0].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p></div>
                 {
-                    show === true ?
+                    show1 === true ?
                         <>
                             <p className='text-slate-900'>{recipes[0].cooking_method}</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow(!show)}>Read less</span>
+                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow1(!show1)}>Read less</span>
                         </>
                         :
                         <>
                             <p className='text-slate-500'>{recipes[0].cooking_method.substring(0, 100)}.....</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow(!show)}>Read more</span>
+                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow1(!show1)}>Read more</span>
                         </>
                 }
             </div>
+            {/* recipe 2 */}
             <div>
-                <div><h4>{recipes[1].recipe_name}</h4></div>
+                <div className='flex justify-between'>
+                    <h4>{recipes[1].recipe_name}</h4>
+                    <button disabled={disable2} onClick={handleFavorites1}>
+                        {
+                            disable2 ? <BsFillHeartFill size={15} color="red" /> : <BsHeart size={15} />
+                        }
+                    </button>
+                </div>
                 <div><p>{recipes[1].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p></div>
                 {
-                    show === true ?
+                    show2 === true ?
                         <>
                             <p className='text-slate-900'>{recipes[1].cooking_method}</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow(!show)}>Read less</span>
+                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow2(!show2)}>Read less</span>
                         </>
                         :
                         <>
                             <p className='text-slate-500'>{recipes[1].cooking_method.substring(0, 100)}.....</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow(!show)}>Read more</span>
+                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow2(!show2)}>Read more</span>
                         </>
                 }
             </div>
+            {/* recipe 3 */}
             <div>
-                <div><h4>{recipes[2].recipe_name}</h4></div>
+                <div className='flex justify-between'>
+                    <h4>{recipes[2].recipe_name}</h4>
+                    <button disabled={disable3} onClick={handleFavorites2}>
+                        {
+                            disable3 ? <BsFillHeartFill size={15} color="red" /> : <BsHeart size={15} />
+                        }
+                    </button>
+                </div>
                 <div><p>{recipes[2].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p></div>
                 {
-                    show === true ?
+                    show3 === true ?
                         <>
                             <p className='text-slate-900'>{recipes[2].cooking_method}</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow(!show)}>Read less</span>
+                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow3(!show3)}>Read less</span>
                         </>
                         :
                         <>
                             <p className='text-slate-500'>{recipes[2].cooking_method.substring(0, 100)}.....</p>
-                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow(!show)}>Read more</span>
+                            <span className='font-semibold text-blue-600 cursor-pointer' onClick={() => setShow3(!show3)}>Read more</span>
                         </>
                 }
             </div>
