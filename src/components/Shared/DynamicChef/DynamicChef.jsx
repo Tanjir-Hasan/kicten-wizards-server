@@ -15,7 +15,7 @@ const DynamicChef = ({ chef }) => {
                     <p>Likes {likes}</p>
                     <div className="card-actions justify-end">
                         <Link to={`/data/${chef_id}`}>
-                            <button className="btn bg-[#eebe7a] hover:bg-[#C9AB81] border-none">View Recipes</button>
+                            <button className="btn text-slate-950 bg-[#eebe7a] hover:bg-[#f2d3a8] border-none">View Recipes</button>
                         </Link>
                     </div>
                 </div>

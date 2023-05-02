@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.active {
+    @apply btn btn-ghost text-[#eebe7a] bg-[#0F1D22] mr-4 underline underline-offset-8;
+}
+
+.default {
+    @apply btn btn-ghost text-white mr-4 no-underline;
+}
