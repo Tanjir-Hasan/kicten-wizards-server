@@ -23,7 +23,7 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 <a
-                    className="btn bg-[#eebe7a] hover:bg-[#C9AB81]"                   
+                    className="btn text-slate-950 bg-[#eebe7a] hover:bg-[#f2d3a8]"                   
                 >Login</a>
             </div>
         </div>

@@ -9,6 +9,8 @@ import {
 import Main from './layouts/Main';
 import Home from './components/Home/Home/Home';
 import ChefDetails from './components/Shared/ChefDetails/ChefDetails';
+import Login from './components/Shared/Login/Login/Login';
+import Register from './components/Shared/Login/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
         path: "/data/:id",
         element: <ChefDetails></ChefDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/data/${params.id}`)
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
       }
     ]
   },
