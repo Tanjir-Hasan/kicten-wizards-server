@@ -48,15 +48,15 @@ const Register = () => {
                 <div className='w-1/2 mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
                     <form onSubmit={handleRegister} className='flex flex-col'>
 
-                        <input type="text" name="name" id="" placeholder='Your Name' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none mb-4 pb-2' required />
+                        <input type="text" name="name" id="" placeholder='Your Name' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
-                        <input type="text" name="photo" id="" placeholder='Photo URL' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none mb-4 pb-2' required />
+                        <input type="text" name="photo" id="" placeholder='Photo URL' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
-                        <input type="email" name="email" id="" placeholder='Enter your email' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none mb-4 pb-2' required />
+                        <input type="email" name="email" id="" placeholder='Enter your email' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
-                        <input type="password" name="password" id="" placeholder='Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none mb-4 pb-2' required />
+                        <input type="password" name="password" id="" placeholder='Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
-                        <input type="password" name="confirmPassword" id="" placeholder='Confirm Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none mb-4 pb-2' required />
+                        <input type="password" name="confirmPassword" id="" placeholder='Confirm Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
                         <button className='text-slate-950 bg-[#e19a3c] hover:bg-[#f2bc71] my-6 py-3'>Register</button>
                         <p className='text-center'>Already have an account? <Link to="/login" className='text-[#eebe7a] hover:text-[#f2d3a8] underline underline-offset-2 '>Login</Link></p>
