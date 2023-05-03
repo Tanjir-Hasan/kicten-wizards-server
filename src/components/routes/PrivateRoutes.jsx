@@ -10,7 +10,7 @@ const PrivateRoutes = ({ children }) => {
     console.log(location);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className='flex justify-center max-h-screen my-48'><progress className="progress w-56"></progress></div>;
     };
 
     if (user) {

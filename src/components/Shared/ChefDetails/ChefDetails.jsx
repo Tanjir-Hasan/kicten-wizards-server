@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import { BsFillHeartFill, BsHeart } from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Rating from 'react-rating';
 
 const ChefDetails = () => {
     const [show1, setShow1] = useState(false);
@@ -86,6 +87,9 @@ const ChefDetails = () => {
                     </div>
                     <div>
                         <p>{recipes[0].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p>
+                        <div>
+                            <p className=''>{recipes[0].rating}</p>
+                        </div>
                     </div>
                     <p className='font-semibold my-1'>Cooking process</p>
                     {
@@ -112,7 +116,11 @@ const ChefDetails = () => {
                             }
                         </button>
                     </div>
-                    <div><p>{recipes[1].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p></div>
+                    <div><p>{recipes[1].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p>
+                        <div>
+                            <p className=''>{recipes[1].rating}</p>
+                        </div>
+                    </div>
                     <p className='font-semibold my-1'>Cooking process</p>
                     {
                         show2 === true ?
@@ -139,7 +147,17 @@ const ChefDetails = () => {
                         }
                     </button>
                 </div>
-                <div><p>{recipes[2].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p></div>
+                <div><p>{recipes[2].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p>
+                    <div>
+                        <Rating
+                            placeholderRating={recipes[2].rating}
+                            emptySymbol={<img src="assets/images/star-grey.png" className="icon" />}
+                            placeholderSymbol={<img src="assets/images/star-red.png" className="icon" />}
+                            fullSymbol={<img src="assets/images/star-yellow.png" className="icon" />}
+                        />
+                        <p className=''>{recipes[2].rating}</p>
+                    </div>
+                </div>
                 <p className='font-semibold my-1'>Cooking process</p>
                 {
                     show3 === true ?

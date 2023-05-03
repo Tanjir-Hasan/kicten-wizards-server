@@ -4,11 +4,11 @@ const ref = React.createRef();
 
 const Blog = () => {
     return (
-        <>
+        <div className='w-8/12 mx-auto'>
             <Pdf targetRef={ref} filename="blogs.pdf">
                 {({ toPdf }) => <button onClick={toPdf} className='text-slate-800 ms-10 mt-2 btn bg-[#e19a3c] hover:bg-[#f2bc71]'>Download Pdf</button>}
             </Pdf>
-            <div className='px-8' ref={ref}>
+            <div className='mx-14 px-3' ref={ref}>
                 <h1 className='text-5xl font-semibold text-[#f18701] text-center my-10'>Q&A about <span className='text-[#0077b6] underline underline-offset-4'>React</span></h1>
                 <h3 className='text-2xl font-mono text-rose-500'>Question 1</h3>
                 <p className='mb-2'>What is the differences between uncontrolled and controlled components?</p>
@@ -32,7 +32,7 @@ const Blog = () => {
                 <p className='text-2xl font-mono text-[#0F1D22]'>Answer:</p>
                 <p className='text-[#1b4332] mx-6 mb-6'>Custom React JS hooks offer reusability as when a custom hook is created, it can be reused easily, which makes the code cleaner and reduces the time to write the code. It also enhances the rendering speed of the code as a custom hook does not need to be rendered again and again while rendering the whole code.</p>
             </div>
-        </>
+        </div>
     );
 };
 
