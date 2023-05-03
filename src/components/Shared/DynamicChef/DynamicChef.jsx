@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 
 const DynamicChef = ({ chef }) => {
     const { chef_id, chef_picture, chef_name, years_of_experience, number_of_recipes, likes } = chef;
-    console.log(chef_name)
     return (
         <>
+            {/* <LazyLoad width={1024} height={762} threshold={0.99}>
+        <img src={chef_picture} className='h-64 rounded-ss-2xl' />
+        </LazyLoad> */}
             <div className="lg:flex bg-base-100 shadow-xl rounded-lg w-2/3 mx-auto mb-6">
-                <img src={chef_picture} className='h-64 rounded-ss-2xl' />
+                <LazyLoad>
+                    <img src={chef_picture} className='h-64 rounded-ss-2xl' />
+                </LazyLoad>
                 <div className="card-body lg:flex lg:flex-row items-center justify-between">
                     <div className='lg:flex gap-12'>
                         <h2 className="card-title text-[#d90429]">{chef_name}</h2>

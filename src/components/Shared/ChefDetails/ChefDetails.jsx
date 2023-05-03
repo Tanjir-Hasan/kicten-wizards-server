@@ -3,7 +3,8 @@ import { useLoaderData } from 'react-router-dom';
 import { BsFillHeartFill, BsHeart } from 'react-icons/bs';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Rating from 'react-rating';
+import { Rating } from '@smastrom/react-rating';
+import '@smastrom/react-rating/style.css';
 
 const ChefDetails = () => {
     const [show1, setShow1] = useState(false);
@@ -87,8 +88,9 @@ const ChefDetails = () => {
                     </div>
                     <div>
                         <p>{recipes[0].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p>
-                        <div>
-                            <p className=''>{recipes[0].rating}</p>
+                        <div className='flex items-center justify-end gap-2 my-1'>
+                            <Rating style={{ maxWidth: 100 }} value={recipes[0].rating} readOnly />
+                            <p>{recipes[0].rating}</p>
                         </div>
                     </div>
                     <p className='font-semibold my-1'>Cooking process</p>
@@ -117,8 +119,9 @@ const ChefDetails = () => {
                         </button>
                     </div>
                     <div><p>{recipes[1].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p>
-                        <div>
-                            <p className=''>{recipes[1].rating}</p>
+                        <div className='flex items-center justify-end gap-2 my-1'>
+                            <Rating style={{ maxWidth: 100 }} value={recipes[1].rating} readOnly />
+                            <p>{recipes[1].rating}</p>
                         </div>
                     </div>
                     <p className='font-semibold my-1'>Cooking process</p>
@@ -148,14 +151,9 @@ const ChefDetails = () => {
                     </button>
                 </div>
                 <div><p>{recipes[2].ingredients.map((item, index) => <li key={index}>{item}</li>)}</p>
-                    <div>
-                        <Rating
-                            placeholderRating={recipes[2].rating}
-                            emptySymbol={<img src="assets/images/star-grey.png" className="icon" />}
-                            placeholderSymbol={<img src="assets/images/star-red.png" className="icon" />}
-                            fullSymbol={<img src="assets/images/star-yellow.png" className="icon" />}
-                        />
-                        <p className=''>{recipes[2].rating}</p>
+                    <div className='flex items-center justify-end gap-2 my-1'>
+                        <Rating style={{ maxWidth: 100 }} value={recipes[2].rating} readOnly />
+                        <p>{recipes[2].rating}</p>
                     </div>
                 </div>
                 <p className='font-semibold my-1'>Cooking process</p>

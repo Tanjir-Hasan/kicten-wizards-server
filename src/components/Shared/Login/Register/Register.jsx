@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Lottie from "lottie-react";
 import register from "../../../../../public/animation/101191-submit-application-successfully.json";
 import errorImg from "../../../../../public/animation/101962-oh-no.json";
@@ -7,10 +7,16 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, userUpdate } = useContext(AuthContext);
 
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
+
+    const navigate = useNavigate();
+
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/" || `/data/${id}`;
 
     const handleRegister = event => {
         event.preventDefault();
@@ -22,16 +28,17 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
-        const confirmPassword = form.confirmPassword.value;
-        console.log(name, email, photo, password, confirmPassword)
+        console.log(name, email, photo, password)
 
         createUser(email, password)
             .then(result => {
                 const createUser = result.user;
+                userUpdate(name, photo);
                 console.log(createUser);
                 setError('');
                 form.reset();
-                setSuccess('Account crated successfully!!!')
+                setSuccess('Account crated successfully!!!');
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message);
@@ -55,8 +62,6 @@ const Register = () => {
                         <input type="email" name="email" id="" placeholder='Enter your email' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
                         <input type="password" name="password" id="" placeholder='Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
-
-                        <input type="password" name="confirmPassword" id="" placeholder='Confirm Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
                         <button className='text-slate-950 bg-[#e19a3c] hover:bg-[#f2bc71] my-6 py-3'>Register</button>
                         <p className='text-center'>Already have an account? <Link to="/login" className='text-[#eebe7a] hover:text-[#f2d3a8] underline underline-offset-2 '>Login</Link></p>

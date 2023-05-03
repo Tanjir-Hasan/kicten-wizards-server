@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import Lottie from "lottie-react";
 import login from "../../../../../public/animation/122987-admin-page-koperasi.json";
@@ -9,13 +9,15 @@ const Login = () => {
 
     const { id } = useParams();
 
-    const { signUser, googleAuthProvider, auth, gitHubAuthProvider } = useContext(AuthContext);
+    const [error, setError] = useState('');
+
+    const { signUser, googleAuthProvider, auth, gitHubAuthProvider, userUpdate } = useContext(AuthContext);
 
     const navigate = useNavigate();
 
     const location = useLocation();
 
-    const from = location.state?.from?.pathname || `/data/${id}`;
+    const from = location.state?.from?.pathname || "/" || `/data/${id}`;
 
     const handleLogin = event => {
         event.preventDefault();
@@ -29,10 +31,12 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                setError('');
+                userUpdate(name);
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message);
             })
     };
 
@@ -42,7 +46,11 @@ const Login = () => {
         signInWithPopup(auth, googleAuthProvider)
             .then(result => {
                 const googleUser = result.user;
-                console.log(googleUser)
+                console.log(googleUser);
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error);
             })
     };
 
@@ -50,7 +58,8 @@ const Login = () => {
         signInWithPopup(auth, gitHubAuthProvider)
             .then(result => {
                 const gitHubUser = result.user;
-                console.log(gitHubUser)
+                console.log(gitHubUser);
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
@@ -60,6 +69,7 @@ const Login = () => {
     return (
         <>
             <h3 className='text-4xl font-medium text-center my-6'>Please Login</h3>
+            <p className='text-xl font-extrabold text-center text-rose-500'>{error}</p>
             <div className='flex justify-around items-center mx-auto'>
                 <Lottie animationData={login} loop={true} className='w-96 h-96' />
                 <div>
@@ -73,7 +83,7 @@ const Login = () => {
                                 <input type="checkbox" name="" id="" />
                                 <p>Remember Me</p>
                             </div>
-                            <button className='text-slate-950 bg-[#e19a3c] hover:bg-[#f2bc71] my-6 py-3' >Login</button>
+                            <button className='text-slate-950 bg-[#e19a3c] hover:bg-[#f2bc71] my-6 py-3 hover:animate-pulse' >Login</button>
                             <p className='text-center'>Don't have an account? <Link to="/register" className='text-[#eebe7a] hover:text-[#f2d3a8] underline underline-offset-2'>Create an account</Link></p>
                         </form>
                     </div>
@@ -83,16 +93,16 @@ const Login = () => {
                         <div className="flex-grow h-px bg-[#0F1D22]"></div>
                     </div>
                     <div className='flex flex-col gap-2 w-full mx-auto'>
-                        <button className='flex items-center border border-[#0F1D22] rounded-full p-2 bg-[#e19a3c] hover:bg-[#f2bc71]'>
+                        <button className='flex items-center border-2 border-r-[#4285F4] border-l-[#DB4437] border-t-[#0F9D58] border-b-[#F4B400] rounded-full p-2'>
                             <img src="https://i.ibb.co/TTGM1hm/google.png
-https://i.ibb.co/T8KScYH/github.png" className='h-12 ml-1 bg-white rounded-full p-2' alt="" />
-                            <span onClick={handleGoogleSign} className="text-center text-slate-950 flex-1">
+https://i.ibb.co/T8KScYH/github.png" className='h-8 ml-1 animate-spin' alt="" />
+                            <span onClick={handleGoogleSign} className="text-center text-slate-950 flex-1 hover:animate-pulse">
                                 Continue with Google
                             </span>
                         </button>
-                        <button className='flex items-center border border-[#0F1D22] rounded-full p-2'>
-                            <img src="https://i.ibb.co/T8KScYH/github.png" className='h-8 ml-1' alt="" />
-                            <span onClick={handleGitHubSign} className="text-center flex-1">
+                        <button className='flex items-center border-2 border-l-[#000000] border-r-[#000000] border-t-[#2b92d7] border-b-[#3498db] rounded-full p-2'>
+                            <img src="https://i.ibb.co/Jq4K5ny/github-1.png" className='h-8 ml-1 animate-spin' alt="" />
+                            <span onClick={handleGitHubSign} className="text-center flex-1 text-slate-950 hover:animate-pulse">
                                 Continue with Github
                             </span>
                         </button>
