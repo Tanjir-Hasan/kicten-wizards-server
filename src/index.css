@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 .active {
-    @apply btn btn-ghost text-[#e19a3c] bg-[#0F1D22] mr-4 underline underline-offset-8;
+    @apply btn btn-ghost text-[#0077b6] border-none mr-4 underline underline-offset-8;
 }
 
 .default {
-    @apply btn btn-ghost text-white mr-4 no-underline;
+    @apply btn btn-ghost text-slate-950 mr-4 no-underline;
 }

@@ -5,11 +5,14 @@ const ref = React.createRef();
 const Blog = () => {
     return (
         <div className='w-8/12 mx-auto'>
-            <Pdf targetRef={ref} filename="blogs.pdf">
-                {({ toPdf }) => <button onClick={toPdf} className='text-slate-800 ms-10 mt-2 btn bg-[#e19a3c] hover:bg-[#f2bc71]'>Download Pdf</button>}
-            </Pdf>
+            <h1 className='text-5xl font-semibold text-[#f18701] text-center mt-10'>Q&A about <span className='text-[#0077b6] underline underline-offset-4'>React</span></h1>
             <div className='mx-14 px-3' ref={ref}>
-                <h1 className='text-5xl font-semibold text-[#f18701] text-center my-10'>Q&A about <span className='text-[#0077b6] underline underline-offset-4'>React</span></h1>
+                <div className=' flex justify-center'>
+
+                <Pdf targetRef={ref} filename="blogs.pdf">
+                    {({ toPdf }) => <button onClick={toPdf} className='text-white bg-[#0077b6] hover:bg-sky-600 ms-10 my-5 btn border-none'>Download Pdf</button>}
+                </Pdf>
+                </div>
                 <h3 className='text-2xl font-mono text-rose-500'>Question 1</h3>
                 <p className='mb-2'>What is the differences between uncontrolled and controlled components?</p>
                 <p className='text-2xl font-mono text-[#0F1D22]'>Answer:</p>

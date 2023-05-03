@@ -28,21 +28,28 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
-        console.log(name, email, photo, password)
 
+        if (password.length < 6) {
+            setError('Password must be at least 6 characters');
+            return;
+        }
+        
         createUser(email, password)
             .then(result => {
                 const createUser = result.user;
-                userUpdate(name, photo);
-                console.log(createUser);
-                setError('');
-                form.reset();
-                setSuccess('Account crated successfully!!!');
-                navigate(from, { replace: true })
+                userUpdate(name, photo)
+                    .then(() => {
+                        setError('');
+                        form.reset();
+                        setSuccess('Account crated successfully!!!');
+                        navigate(from, { replace: true })
+                    })
             })
             .catch(error => {
                 setError(error.message);
             })
+
+        
     }
 
     return (
@@ -52,7 +59,7 @@ const Register = () => {
             <p className='text-xl font-extrabold text-center text-rose-500 w-1/2'>{error}</p>
             <p className='text-xl font-extrabold text-center text-[#0F1D22] w-1/2'>{success}</p>
             <div className='flex justify-around items-center w-full mx-auto px-8'>
-                <div className='w-1/2 mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
+                <div style={{backgroundImage: "linear-gradient( 109.6deg,  rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1% )"}} className='w-1/2 mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
                     <form onSubmit={handleRegister} className='flex flex-col'>
 
                         <input type="text" name="name" id="" placeholder='Your Name' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
@@ -63,8 +70,8 @@ const Register = () => {
 
                         <input type="password" name="password" id="" placeholder='Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
-                        <button className='text-slate-950 bg-[#e19a3c] hover:bg-[#f2bc71] my-6 py-3'>Register</button>
-                        <p className='text-center'>Already have an account? <Link to="/login" className='text-[#eebe7a] hover:text-[#f2d3a8] underline underline-offset-2 '>Login</Link></p>
+                        <button className='text-white bg-[#0077b6] border-none hover:bg-sky-600 my-6 py-3 hover:animate-pulse'>Register</button>
+                        <p className='text-center'>Already have an account? <Link to="/login" className='text-[#124764] hover:text-sky-600 underline underline-offset-2 '>Login</Link></p>
                     </form>
                 </div>
                 <Lottie animationData={register} loop={true} className='w-1/2 h-96' />

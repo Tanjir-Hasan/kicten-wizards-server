@@ -27,21 +27,21 @@ const router = createBrowserRouter([
         element: <Home></Home>
       },
       {
-        path: "/data/:id",
+        path: "data/:id",
         // element: <ChefDetails></ChefDetails>,
         element: <PrivateRoutes><ChefDetails></ChefDetails></PrivateRoutes>,
         loader: ({ params }) => fetch(`https://kichen-wizards-server-tanjir-hasan.vercel.app/data/${params.id}`)
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login></Login>
       },
       {
-        path: "/register",
+        path: "register",
         element: <Register></Register>
       },
       {
-        path: "/blog",
+        path: "blog",
         element: <Blog></Blog>
       }
     ]

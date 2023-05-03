@@ -8,7 +8,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
 
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
 
     // create user
@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
 
     //
 
-    const userUpdate = (photoURL, displayName) => {
+    const userUpdate = (displayName, photoURL) => {
         return updateProfile(auth.currentUser, {photoURL, displayName});
     }
 
