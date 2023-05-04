@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import Lottie from "lottie-react";
 import register from "../../../../../public/animation/101191-submit-application-successfully.json";
 import errorImg from "../../../../../public/animation/101962-oh-no.json";
@@ -16,7 +16,7 @@ const Register = () => {
 
     const location = useLocation();
 
-    const from = location.state?.from?.pathname || "/" || `/data/${id}`;
+    const from = location.state?.from || "/";
 
     const handleRegister = event => {
         event.preventDefault();
@@ -37,7 +37,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const createUser = result.user;
-                userUpdate(name, photo)
+                userUpdate(name, photo);
                 createUser.displayName = name;
                 createUser.photoURL = photo;
                 setSuccess('Account crated successfully!!!');
@@ -48,8 +48,6 @@ const Register = () => {
             .catch(error => {
                 setError(error.message);
             })
-
-
     }
 
     return (

@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div style={{backgroundImage: "radial-gradient( circle 674px at 18.3% 77%,  rgba(139,186,244,1) 3.4%, rgba(15,51,92,1) 56.6% )"}} className='p-16 text-white mt-8'>
+        <div style={{ backgroundImage: "radial-gradient( circle 674px at 18.3% 77%,  rgba(139,186,244,1) 3.4%, rgba(15,51,92,1) 56.6% )" }} className='p-16 text-white mt-8'>
             <div className='lg:flex justify-between'>
                 <div className=''>
-                    <h3 className='text-xl font-medium text-slate-900 mb-3'>Kitchen Wizards</h3>
+                    <div className='flex items-center gap-1 mb-3'>
+                        <img src="https://i.ibb.co/d6WTVFn/letter-k-1.png" alt="" className='h-16' />
+                        <h3 className='text-2xl font-bold text-white '>itchen Wizards</h3>
+                    </div>
                     <p>We provide new recipes with a twist on daily basis.
                         <br />
-                        I also post blog posts about fun ideas to do in the kitchen</p>
+                        We also post blog posts about fun ideas to do in the kitchen.</p>
                 </div>
                 <div>
                     <h3 className='text-xl font-medium text-white mb-3'>Need help?</h3>

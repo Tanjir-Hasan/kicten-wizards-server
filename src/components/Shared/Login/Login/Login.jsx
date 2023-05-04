@@ -55,7 +55,6 @@ const Login = () => {
         signInWithPopup(auth, gitHubAuthProvider)
             .then(result => {
                 const gitHubUser = result.user;
-                console.log(gitHubUser);
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -83,7 +82,7 @@ const Login = () => {
                                 }
                             </div>
                             <button className='text-white bg-[#0077b6] border-none hover:bg-sky-600 my-6 py-3 hover:animate-pulse' >Login</button>
-                            <p className='text-center'>Don't have an account? <Link to="/register" className='text-[#124764] hover:text-sky-600 underline underline-offset-2'>Create an account</Link></p>
+                            <p className='text-center'>Don't have an account? <Link to="/register" state={{from}} className='text-[#124764] hover:text-sky-600 underline underline-offset-2'>Create an account</Link></p>
                         </form>
                     </div>
                     <div className="flex items-center w-full mx-auto py-4">
