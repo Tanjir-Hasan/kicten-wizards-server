@@ -21,7 +21,7 @@ const Header = () => {
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost text-black lg:hidden">
-                        <svg xmlns="https://i.ibb.co/vZPvW4f/menu-1.png" className="h-6 w-6 -ml-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        <svg xmlns="https://i.ibb.co/vZPvW4f/menu-1.png" className="h-6 w-6 -ml-5  text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content text-slate-950 mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to="/" className=''>Home</Link></li>

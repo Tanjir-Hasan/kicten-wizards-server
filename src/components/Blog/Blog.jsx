@@ -7,7 +7,7 @@ const Blog = () => {
         <div className='w-8/12 mx-auto'>
             <div className='flex justify-center mt-2'>
                 <Pdf targetRef={ref} filename="blogs.pdf">
-                    {({ toPdf }) => <button onClick={toPdf} className='text-white bg-[#0077b6] hover:bg-sky-600 ms-10 my-5 btn border-none'>Download Pdf</button>}
+                    {({ toPdf }) => <button onClick={toPdf} className='text-white bg-[#0077b6] hover:bg-sky-600 ms-10 my-5 btn border-none'>Download <img src="https://i.ibb.co/GRZZG79/pdf.png" alt="" className='h-6 ml-2' /> </button>}
                 </Pdf>
             </div>
             <div className='mx-14 px-3' ref={ref}>

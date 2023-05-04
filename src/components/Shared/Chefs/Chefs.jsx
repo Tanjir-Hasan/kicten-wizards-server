@@ -14,12 +14,12 @@ const Chefs = () => {
         <div>
             <h3 className='text-5xl font-semibold font-mono text-center text-slate-800 my-10 p-8'>Our Favourite Chef's</h3>
             <div>
-            {
-                chefs.map(chef => <DynamicChef
-                    key={chef.chef_id}
-                    chef={chef}
-                ></DynamicChef>)
-            }
+                {
+                    chefs.map(chef => <DynamicChef
+                        key={chef.chef_id}
+                        chef={chef}
+                    ></DynamicChef>)
+                }
             </div>
         </div>
     );

@@ -11,6 +11,8 @@ const Login = () => {
 
     const [error, setError] = useState('');
 
+    const [hide, setHide] = useState(false);
+
     const { signUser, googleAuthProvider, auth, gitHubAuthProvider, userUpdate } = useContext(AuthContext);
 
     const navigate = useNavigate();
@@ -25,12 +27,10 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
 
         signUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 setError('');
                 userUpdate(name);
                 navigate(from, { replace: true })
@@ -44,7 +44,6 @@ const Login = () => {
         signInWithPopup(auth, googleAuthProvider)
             .then(result => {
                 const googleUser = result.user;
-                console.log(googleUser);
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -71,15 +70,17 @@ const Login = () => {
             <div className='flex justify-around items-center mx-auto'>
                 <Lottie animationData={login} loop={true} className='w-96 h-96' />
                 <div>
-                    <div style={{backgroundImage: "linear-gradient( 109.6deg,  rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1% )"}} className='w-full mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
+                    <div style={{ backgroundImage: "linear-gradient( 109.6deg,  rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1% )" }} className='w-full mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
                         <form onSubmit={handleLogin} className='flex flex-col'>
                             <input type="email" name="email" id="" placeholder='User name or email' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
-                            <input type="password" name="password" id="" placeholder='Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
+                            <input type={hide ? "text" : "password"} name="password" id="" placeholder='Password' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
 
-                            <div className='inline-flex gap-2'>
-                                <input type="checkbox" name="" id="" />
-                                <p>Remember Me</p>
+                            <div className='inline-flex gap-2' >
+                                <input type="checkbox" name="" id="" onClick={() => setHide(!hide)} />
+                                {
+                                    hide ? <p>Hide Password</p> : <p>Show Password</p>
+                                }
                             </div>
                             <button className='text-white bg-[#0077b6] border-none hover:bg-sky-600 my-6 py-3 hover:animate-pulse' >Login</button>
                             <p className='text-center'>Don't have an account? <Link to="/register" className='text-[#124764] hover:text-sky-600 underline underline-offset-2'>Create an account</Link></p>

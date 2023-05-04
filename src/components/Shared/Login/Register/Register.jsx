@@ -33,23 +33,23 @@ const Register = () => {
             setError('Password must be at least 6 characters');
             return;
         }
-        
+
         createUser(email, password)
             .then(result => {
                 const createUser = result.user;
                 userUpdate(name, photo)
-                    .then(() => {
-                        setError('');
-                        form.reset();
-                        setSuccess('Account crated successfully!!!');
-                        navigate(from, { replace: true })
-                    })
+                createUser.displayName = name;
+                createUser.photoURL = photo;
+                setSuccess('Account crated successfully!!!');
+                setError('');
+                form.reset();
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message);
             })
 
-        
+
     }
 
     return (
@@ -59,7 +59,7 @@ const Register = () => {
             <p className='text-xl font-extrabold text-center text-rose-500 w-1/2'>{error}</p>
             <p className='text-xl font-extrabold text-center text-[#0F1D22] w-1/2'>{success}</p>
             <div className='flex justify-around items-center w-full mx-auto px-8'>
-                <div style={{backgroundImage: "linear-gradient( 109.6deg,  rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1% )"}} className='w-1/2 mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
+                <div style={{ backgroundImage: "linear-gradient( 109.6deg,  rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1% )" }} className='w-1/2 mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
                     <form onSubmit={handleRegister} className='flex flex-col'>
 
                         <input type="text" name="name" id="" placeholder='Your Name' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />
