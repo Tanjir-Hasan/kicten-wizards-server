@@ -6,15 +6,17 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 const DynamicChef = ({ chef }) => {
+    
     const { chef_id, chef_picture, chef_name, years_of_experience, number_of_recipes, likes } = chef;
+
     return (
         <>
             <div data-aos="flip-left"
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000"
-                className="lg:flex bg-base-100 shadow-xl rounded-lg w-2/3 mx-auto mb-6">
+                className="lg:flex bg-base-100 shadow-xl rounded-lg w-2/3 mx-auto mb-6 motion-safe:animate-fadeIn">
                 <LazyLoad>
-                    <img src={chef_picture} className='h-64 rounded-ss-2xl' />
+                    <img src={chef_picture} className='lazyload h-64 rounded-ss-2xl' />
                 </LazyLoad>
                 <div className="card-body lg:flex lg:flex-row items-center justify-between">
                     <div className='lg:flex gap-12'>

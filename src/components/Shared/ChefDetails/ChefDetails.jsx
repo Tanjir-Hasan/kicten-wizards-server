@@ -77,7 +77,7 @@ const ChefDetails = () => {
                     </span>
                 </div>
                 <LazyLoad>
-                    <img src={chef_picture} alt="" className='h-72 rounded-xl' />
+                    <img src={chef_picture} alt="" className='lazyload h-72 rounded-xl' />
                 </LazyLoad>
             </div>
             <h1 className='text-3xl font-serif text-orange-500 text-center animate-pulse my-10'>Recent Recipes</h1>

@@ -9,7 +9,7 @@ AOS.init();
 const SubmitRecipe = () => {
     return (
         <>
-            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 my-10 p-8'>Submit Your Recipes</h1>
+            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 my-10 p-8'>Share Your Recipes</h1>
             <div data-aos="flip-up" className='lg:flex items-center w-11/12 mx-auto'>
                 <Lottie animationData={submitRecipe} loop={true} className='lg:w-2/4 h-96' />
                 <div className='lg:w-2/4 px-5'>

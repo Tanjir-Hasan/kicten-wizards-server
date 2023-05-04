@@ -4,7 +4,6 @@ import { FaHome } from 'react-icons/fa';
 
 const ErrorPage = () => {
     const { error, status } = useRouteError();
-    console.log(status)
     return (
         <div className='flex flex-col align-middle h-screen justify-center items-center my-auto'>
             <img src="https://i.ibb.co/T1zLHgy/3747371.jpg" alt="" className='h-64' />

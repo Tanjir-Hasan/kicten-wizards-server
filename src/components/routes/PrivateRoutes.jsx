@@ -7,7 +7,6 @@ const PrivateRoutes = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
 
     const location = useLocation();
-    console.log(location);
 
     if (loading) {
         return <div className='flex justify-center max-h-screen my-48'><progress className="progress w-56"></progress></div>;

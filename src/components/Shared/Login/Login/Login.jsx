@@ -40,8 +40,6 @@ const Login = () => {
             })
     };
 
-
-
     const handleGoogleSign = () => {
         signInWithPopup(auth, googleAuthProvider)
             .then(result => {

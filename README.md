@@ -2,7 +2,7 @@
 
 <hr>
 
-* This is a Australian cuisine website.         
+* This is a Australian cuisine website. In the Home page of total 6 components is shown below. The nav and the footer are shown in every page.      
 
 * Note: Only Home page is responsive for mobile device and large display.
 

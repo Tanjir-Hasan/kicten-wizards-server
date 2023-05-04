@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import DynamicChef from '../DynamicChef/DynamicChef';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
-// AOS.init();
 
 const Chefs = () => {
     const [chefs, setChefs] = useState([]);
