@@ -3,7 +3,7 @@ import React from 'react';
 const HealthAndNutrition = () => {
     return (
         <div className='w-11/12 mx-auto'>
-            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 my-10 p-8'>Health and Nutrition</h1>
+            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 mt-20 mb-10 p-8'>Health and Nutrition</h1>
 
             <div>
                 <div className='text-justify '>

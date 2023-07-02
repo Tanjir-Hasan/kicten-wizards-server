@@ -6,7 +6,7 @@ AOS.init();
 const ChefsFavourite = () => {
     return (
         <>
-            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 my-10 p-8'>Chef's Favourite</h1>
+            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 mt-20 mb-10 p-8'>Chef's Favourite</h1>
             <div className='w-11/12 mx-auto px-8'>
                 <div data-aos="fade-down-right"
                     className='lg:flex items-center gap-16 border-2 border-[#0F1D22] rounded-lg shadow-xl mb-6 p-4'>

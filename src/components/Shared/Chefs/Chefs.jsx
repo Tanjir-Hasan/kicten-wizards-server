@@ -12,7 +12,7 @@ const Chefs = () => {
 
     return (
         <div>
-            <h3 className='text-5xl font-semibold font-mono text-center text-slate-800 my-10 p-8'>Our Favourite Chef's</h3>
+            <h3 className='text-5xl font-semibold font-mono text-center text-slate-800 mt-20 mb-10 p-8'>Our Favourite Chef's</h3>
             <div>
                 {
                     chefs.map(chef => <DynamicChef

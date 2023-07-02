@@ -3,7 +3,7 @@ import React from 'react';
 const ContactUs = () => {
     return (
         <>
-            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 my-10 p-8'>Contact Us</h1>
+            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 mt-20 mb-10 p-8'>Contact Us</h1>
             <div style={{ backgroundImage: "linear-gradient( 109.6deg,  rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1% )" }} className='w-1/2 mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
                 <form className='flex flex-col'>
 
