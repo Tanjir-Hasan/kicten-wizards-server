@@ -9,3 +9,8 @@
 .default {
     @apply btn btn-ghost text-slate-950 mr-4 no-underline;
 }
+
+.contact-color {
+    background-image: linear-gradient( 91.3deg,  rgba(135,174,220,1) 1.5%, rgba(255,255,255,1) 100.3% );
+    color: black;
+}

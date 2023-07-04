@@ -5,7 +5,7 @@ const Card = ({ item }) => {
     const { image, description, name, season } = item;
 
     return (
-        <div className='lg:flex justify-between items-center mb-8 border-2 border-[#0F1D22] rounded-lg shadow-xl  p-5 scale-90 hover:scale-100 duration-700'>
+        <div className='lg:flex justify-between items-center mb-8 border-2 border-[#0F1D22] rounded-lg shadow-xl  p-5 lg:scale-90 hover:scale-100 duration-700'>
 
             <div style={{ position: 'relative' }}>
                 <img src={image} alt="" className="lg:w-[500px]" />

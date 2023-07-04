@@ -3,8 +3,8 @@ import React from 'react';
 const ContactUs = () => {
     return (
         <>
-            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 mt-20 mb-10 p-8'>Contact Us</h1>
-            <div style={{ backgroundImage: "linear-gradient( 109.6deg,  rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1% )" }} className='w-1/2 mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
+            <h1 id='contact' className='lg:text-5xl text-2xl lg:mt-28 mt-10 mb-10 font-semibold font-mono text-center text-slate-800'>Contact Us</h1>
+            <div style={{ backgroundImage: "linear-gradient( 109.6deg,  rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1% )" }} className='lg:w-1/2 w-11/12 mx-auto border-2 border-[#0F1D22] rounded-md mt-6 p-12'>
                 <form className='flex flex-col'>
 
                     <input type="text" name="name" id="" placeholder='Your Name' className='placeholder-gray-800 border-b border-[#0F1D22] outline-none rounded-xl px-3 mb-4 py-2' required />

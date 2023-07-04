@@ -14,7 +14,7 @@ const SeasonalRecipes = () => {
 
     return (
         <div>
-            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 mt-20 mb-10 p-8'>Season's Special</h1>
+            <h1 className='lg:text-5xl text-2xl lg:mt-28 mt-10 mb-10 font-semibold font-mono text-center text-slate-800 w-11/12 mx-auto '>Season's Special</h1>
 
             <div className='w-11/12 mx-auto px-8'>
                 {

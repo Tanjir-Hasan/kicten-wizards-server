@@ -17,7 +17,7 @@ const Header = () => {
 
 
     return (
-        <div style={{backgroundImage: "linear-gradient( 91.3deg,  rgba(135,174,220,1) 1.5%, rgba(255,255,255,1) 100.3% )"}} className="navbar p-6">
+        <div id='header' style={{backgroundImage: "linear-gradient( 91.3deg,  rgba(135,174,220,1) 1.5%, rgba(255,255,255,1) 100.3% )"}} className="navbar p-6">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost text-black lg:hidden">

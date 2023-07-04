@@ -6,9 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import LazyLoad from 'react-lazy-load';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-AOS.init();
 
 const ChefDetails = () => {
     const [show1, setShow1] = useState(false);
@@ -83,7 +80,7 @@ const ChefDetails = () => {
             <h1 className='text-3xl font-serif text-orange-500 text-center animate-pulse my-10'>Recent Recipes</h1>
             <div className='flex gap-8 mt-8 w-10/12 mx-auto'>
                 {/* recipe 1 */}
-                <div data-aos="zoom-in" className='border border-slate-200 p-10 w-2/4'>
+                <div className='border border-slate-200 p-10 w-2/4'>
                     <img src={recipes[0].img1} alt="" className='w-auto h-64 mb-3 mx-auto rounded-lg' />
                     <h4 className='text-xl font-serif text-slate-800 hover:text-cyan-800 mb-3'>{recipes[0].recipe_name}</h4>
                     <h3 className='font-thin underline underline-offset-4 mb-3'>INGREDIENTS</h3>
@@ -114,7 +111,7 @@ const ChefDetails = () => {
                     }
                 </div>
                 {/* recipe 2 */}
-                <div data-aos="zoom-in-up" className='border border-slate-200 p-10 w-2/4'>
+                <div className='border border-slate-200 p-10 w-2/4'>
                     <img src={recipes[1].img2} alt="" className='w-auto h-64 mb-3 mx-auto rounded-lg' />
                     <h4 className='text-xl font-serif text-slate-800 hover:text-cyan-800 mb-3'>{recipes[1].recipe_name}</h4>
                     <h3 className='font-thin underline underline-offset-4 mb-3'>INGREDIENTS</h3>
@@ -146,7 +143,7 @@ const ChefDetails = () => {
                 </div>
             </div>
             {/* recipe 3 */}
-            <div data-aos="zoom-in-down" className='border border-slate-200 p-10 w-2/3 mx-auto mt-6'>
+            <div className='border border-slate-200 p-10 w-2/3 mx-auto mt-6'>
                 <img src={recipes[2].img3} alt="" className='w-auto h-72 mb-3 mx-auto rounded-lg' />
                 <h4 className='text-xl font-serif text-center text-slate-800 hover:text-cyan-800 my-5'>{recipes[2].recipe_name}</h4>
                 <h3 className='font-thin underline underline-offset-4 mb-3'>INGREDIENTS</h3>

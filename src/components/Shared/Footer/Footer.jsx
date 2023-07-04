@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BsFillArrowUpCircleFill } from 'react-icons/bs';
 
 const Footer = () => {
     return (
@@ -33,6 +34,9 @@ const Footer = () => {
                         <img className='h-10' src="https://i.ibb.co/sPXpW2Q/twitter.png" alt="" />
                         <img className='h-10' src="https://i.ibb.co/r2K2Cxv/youtube.png" alt="" />
                     </div>
+                    <a href="#header">
+                        <BsFillArrowUpCircleFill className='text-3xl  mt-5' />
+                    </a>
                 </div>
             </div>
             <hr className='my-3' />

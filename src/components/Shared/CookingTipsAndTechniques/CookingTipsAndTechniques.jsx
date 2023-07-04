@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 const CookingTipsAndTechniques = () => {
+
+    const controls = useAnimation();
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            controls.start('visible');
+        }
+    }, [controls, inView]);
+
     return (
         <div>
-            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 mt-20 mb-10 p-8'>Tips and Techniques</h1>
+            <h1 className='lg:text-5xl text-2xl lg:mt-28 mt-10 mb-10 font-semibold font-mono text-center text-slate-800'>Tips and Techniques</h1>
 
             <div>
                 {/* 1 */}
@@ -23,7 +35,8 @@ const CookingTipsAndTechniques = () => {
                         </h1>
                     </div>
 
-                    <div data-aos="fade-down" className='lg:w-1/2'>
+                    <div
+                        className='lg:w-1/2'>
                         <ul className='list-inside font-serif'>
                             <li className='list-disc'>Hold the knife: Grip the knife handle firmly with your dominant hand, and place your other hand on the blade's base for stability.</li>
                             <li className='list-disc'>Basic Cutting Techniques: Learn various cutting techniques, including chopping (for larger pieces), dicing (for small cubes), mincing (finely chopping), and slicing (thin, even cuts).</li>
@@ -50,7 +63,9 @@ const CookingTipsAndTechniques = () => {
                         </h1>
                     </div>
 
-                    <div data-aos="fade-down" className='lg:w-1/2'>
+                    <div
+
+                        className='lg:w-1/2'>
                         <ul className='list-inside font-serif'>
                             <li className='list-disc'>Sautéing: Cook food quickly over high heat in a small amount of oil, stirring frequently.</li>
                             <li className='list-disc'>
@@ -83,7 +98,9 @@ const CookingTipsAndTechniques = () => {
                         </h1>
                     </div>
 
-                    <div data-aos="fade-down" className='lg:w-1/2'>
+                    <div
+
+                        className='lg:w-1/2'>
                         <ul className='list-inside font-serif'>
                             <li className='list-disc'>Herbs and Spices: Explore a variety of herbs and spices, including basil, thyme, cumin, and paprika, to add depth and complexity to your dishes.</li>
                             <li className='list-disc'>
@@ -112,7 +129,9 @@ const CookingTipsAndTechniques = () => {
                         </h1>
                     </div>
 
-                    <div data-aos="fade-down" className='lg:w-1/2'>
+                    <div
+
+                        className='lg:w-1/2'>
                         <ul className='list-inside font-serif'>
                             <li className='list-disc'>Refrigeration: Store perishable foods in the refrigerator at the proper temperature to keep them fresh and safe to consume.</li>
                             <li className='list-disc'>
@@ -143,7 +162,8 @@ const CookingTipsAndTechniques = () => {
                         </h1>
                     </div>
 
-                    <div data-aos="fade-down" className='lg:w-1/2'>
+                    <div
+                        className='lg:w-1/2'>
                         <ul className='list-inside font-serif'>
                             <li className='list-disc'>Batch Cooking: Prepare larger quantities of food at once and store leftovers for quick and easy meals later in the week.</li>
                             <li className='list-disc'>

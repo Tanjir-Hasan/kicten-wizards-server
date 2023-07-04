@@ -15,9 +15,9 @@ const KitchenToolsAndGadgets = () => {
 
     return (
         <div>
-            <h1 className='text-5xl font-semibold font-mono text-center text-slate-800 mt-20 mb-10 p-8'>Tools and Gadgets</h1>
+            <h1 className='lg:text-5xl text-2xl lg:mt-28 mt-10 mb-10 font-semibold font-mono text-center text-slate-800'>Tools and Gadgets</h1>
 
-            <div className='lg:w-11/12 mx-auto px-8'>
+            <div className='lg:w-9/12 mx-auto px-8'>
                 {
                     items.map(item => <Card item={item} key={item.name}></Card>)
                 }

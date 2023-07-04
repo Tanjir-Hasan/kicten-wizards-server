@@ -11,17 +11,19 @@ import ContactUs from '../../Shared/ContactUs/ContactUs';
 
 const Home = () => {
     return (
-        <div className='w-11/12 mx-auto'>
+        <>
             <Banner></Banner>
-            <Chefs></Chefs>
-            <ChefsFavourite></ChefsFavourite>
-            <SeasonalRecipes></SeasonalRecipes>
-            <HealthAndNutrition></HealthAndNutrition>
-            <SubmitRecipe></SubmitRecipe>
-            <CookingTipsAndTechniques></CookingTipsAndTechniques>
-            <KitchenToolsAndGadgets></KitchenToolsAndGadgets>
-            <ContactUs></ContactUs>
-        </div>
+            <div className='w-11/12 mx-auto'>
+                <Chefs></Chefs>
+                <ChefsFavourite></ChefsFavourite>
+                <SeasonalRecipes></SeasonalRecipes>
+                <HealthAndNutrition></HealthAndNutrition>
+                <SubmitRecipe></SubmitRecipe>
+                <CookingTipsAndTechniques></CookingTipsAndTechniques>
+                <KitchenToolsAndGadgets></KitchenToolsAndGadgets>
+                <ContactUs></ContactUs>
+            </div>
+        </>
     );
 };
 
